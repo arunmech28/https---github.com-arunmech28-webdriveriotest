@@ -10,15 +10,15 @@ import Page from './page';
      * define selectors using getter methods
      */
     get inputUsername () {
-        return $('#username');
+        return $('#user-name');
     }
 
     get inputPassword () {
         return $('#password');
     }
 
-    get btnSubmit () {
-        return $('button[type="submit"]');
+    get btnLogin () {
+        return $('#login-button');
     }
 
     /**
@@ -28,14 +28,14 @@ import Page from './page';
     async login (username, password) {
         await this.inputUsername.setValue(username);
         await this.inputPassword.setValue(password);
-        await this.btnSubmit.click();
+        await this.btnLogin.click();
     }
 
     /**
      * overwrite specific options to adapt it to page object
      */
     open () {
-        return super.open('login');
+        return super.open();
     }
 }
 

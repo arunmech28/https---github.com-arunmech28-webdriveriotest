@@ -1,8 +1,8 @@
 import LoginPage from "../pageobjects/login.page";
-import SecurePage from "../pageobjects/secure.page";
+import ProductsPage from "../pageobjects/products.page";
 
 const loginPage = new LoginPage();
-const securePage = new SecurePage();
+const productsPage = new ProductsPage();
 
 
 
@@ -10,5 +10,5 @@ const securePage = new SecurePage();
 
 export {
     loginPage,
-    securePage,
+    productsPage,
 }
