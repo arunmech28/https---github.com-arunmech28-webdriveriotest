@@ -21,24 +21,23 @@ export default class ProductsPage extends Page {
         return $$('.inventory_item_name')
     }
 
-    async validatePageTitle() {
-        return (await this.productTitle.getText()) == "Products";
+    async getPageTitle() {
+        return await this.productTitle.getText();
     }
 
     async sortProducts(sortOption) {
         await sort.sortByValue(sortOption);
     }
 
-    async validateProductsSorted(sortOption) {
-        return (await this.activeSortOption.getText()) == sortOption;
+    async getActiveSortOption() {
+        return await this.activeSortOption.getText();
     }
 
-    async validateCssColorCodeForProductNames(colorCode) {
+    async getCssColorCodeListForProductNames() {
         const list = await this.productNamesList;
-        const colorList = list.map(async (node) => {
+        return list.map(async (node) => {
             return await node.getCSSProperty("color");
-        })
-        return colorList.every((node) => node == colorCode);
+        });
     }
 }
 
